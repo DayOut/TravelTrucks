@@ -40,4 +40,8 @@ const campersSlice = createSlice({
   },
 });
 
+export const selectCampers = (state) => state.campers.items.items;
+export const selectIsLoading = (state) => state.campers.isLoading;
+export const selectError = (state) => state.campers.Error;
+
 export default campersSlice.reducer;

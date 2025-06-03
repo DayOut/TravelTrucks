@@ -1,4 +1,4 @@
 const HomePage = () => {
-  return <div>HomePage</div>;
+  return <h1>Welcome to Travel Tracks! 🚐</h1>;
 };
 export default HomePage;
