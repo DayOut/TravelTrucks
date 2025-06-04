@@ -8,6 +8,7 @@ export const fetchCampers = createAsyncThunk(
   async (params, thunkAPI) => {
     try {
       const response = await axios.get(BASE_URL, { params });
+      console.log("API response:", response.data);
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -30,8 +31,13 @@ const campersSlice = createSlice({
         state.error = null;
       })
       .addCase(fetchCampers.fulfilled, (state, action) => {
-        state.isLoading = false;
-        state.items = action.payload;
+        console.log("API response:", action.payload);
+        if (Array.isArray(action.payload.items)) {
+          state.items = [...state.items, ...action.payload.items];
+        } else {
+          console.error("Unexpected API response format:", action.payload);
+          state.items = [];
+        }
       })
       .addCase(fetchCampers.rejected, (state, action) => {
         state.isLoading = false;
@@ -40,7 +46,7 @@ const campersSlice = createSlice({
   },
 });
 
-export const selectCampers = (state) => state.campers.items.items;
+export const selectCampers = (state) => state.campers.items;
 export const selectIsLoading = (state) => state.campers.isLoading;
 export const selectError = (state) => state.campers.Error;
 

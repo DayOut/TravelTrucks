@@ -1,0 +1,31 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 64px;
+  background-color: #f7f7f7;
+  border-color: #f2f4f7;
+  width: 1440px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #000;
+  text-decoration: none;
+  margin-right: 450px;
+  width: 136px;
+  height: 16px;
+}
+
+.nav {
+  display: flex;
+  gap: 20px;
+}

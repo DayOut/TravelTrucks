@@ -20,6 +20,11 @@ const filterSlice = createSlice({
   },
 });
 
+export const selectLocation = (state) => state.filters.location;
+export const selectType = (state) => state.filters.type;
+export const selectAmenities = (state) => state.filters.amenities;
+export const selectFilters = (state) => state.filters;
+
 export const { setAmenities, setLocation, setType } = filterSlice.actions;
 
 export default filterSlice.reducer;
