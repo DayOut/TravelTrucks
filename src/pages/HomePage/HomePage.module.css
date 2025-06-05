@@ -2,7 +2,7 @@
   width: 1440px;
   height: 696px;
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-    url("../../images/HeroImage.png");
+    url("/HeroImage.png");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -42,4 +42,9 @@
   line-height: 150%;
   letter-spacing: -0.01em;
   color: white;
+}
+
+.link:hover,
+.link:active {
+  background-color: #d84343;
 }

@@ -10,19 +10,21 @@
 
 .container {
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   text-align: center;
 }
 
 .logo {
+  display: flex;
   font-size: 24px;
   font-weight: bold;
   color: #000;
   text-decoration: none;
-  margin-right: 450px;
   width: 136px;
-  height: 16px;
+  height: 15px;
+  margin-right: 450px;
 }
 
 .nav {

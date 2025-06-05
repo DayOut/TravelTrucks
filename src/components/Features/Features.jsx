@@ -1,13 +1,18 @@
 import s from "./Features.module.css";
 
 const Features = ({ camper }) => {
-  // Функція для перетворення першої літери на велику
   const capitalizeFirstLetter = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
   };
 
-  // Функція для форматування назв (наприклад, "panelTruck" -> "Panel truck")
+  //форматування назв (наприклад, "panelTruck" -> "Panel truck")
   const formatName = (name) => {
+    if (name === "AC") {
+      return name;
+    }
+    if (name === "TV") {
+      return name;
+    }
     return name
       .replace(/([A-Z])/g, " $1")
       .split(" ")
@@ -15,28 +20,47 @@ const Features = ({ camper }) => {
       .join(" ");
   };
 
-  // Функція для форматування значень (наприклад, "5.4m" -> "5.4 m")
+  //форматування значень (наприклад, "5.4m" -> "5.4 m")
   const formatValue = (value) => {
     return value.replace(/(\d)([a-zA-Z])/, "$1 $2");
   };
 
-  // Функція для відображення аменіті
+  const amenityIcons = {
+    transmission: "icon-diagram",
+    engine: "icon-fuel-pump",
+    AC: "icon-wind",
+    bathroom: "icon-ph_shower",
+    kitchen: "icon-cup-hot",
+    TV: "icon-tv",
+    radio: "icon-ui-radios",
+    refrigerator: "icon-solar_fridge-outline",
+    microwave: "icon-lucide_microwave",
+    gas: "icon-hugeicons_gas-stove",
+    water: "icon-ion_water-outline",
+  };
+
+  //відображення аменіті з іконками
   const renderAmenities = () => {
     const amenitiesList = [];
 
-    // Додаємо transmission та engine завжди
     amenitiesList.push(
-      <li className={s.engine} key="transmission">
+      <li className={s.vehicleItem} key="transmission">
+        <svg className={s.icon}>
+          <use href={`/icons/icons.svg#${amenityIcons.transmission}`}></use>
+        </svg>
         {formatName(camper.transmission)}
       </li>
     );
     amenitiesList.push(
-      <li className={s.engine} key="engine">
+      <li className={s.vehicleItem} key="engine">
+        <svg className={s.icon}>
+          <use href={`/icons/icons.svg#${amenityIcons.engine}`}></use>
+        </svg>
         {formatName(camper.engine)}
       </li>
     );
 
-    // Додаємо інші аменіті, якщо вони true
+    // якщо аменіті true - push
     const optionalAmenities = [
       "AC",
       "bathroom",
@@ -53,6 +77,9 @@ const Features = ({ camper }) => {
       if (camper[amenity] === true) {
         amenitiesList.push(
           <li className={s.vehicleItem} key={amenity}>
+            <svg className={s.icon}>
+              <use href={`/icons/icons.svg#${amenityIcons[amenity]}`}></use>
+            </svg>
             {formatName(amenity)}
           </li>
         );

@@ -7,10 +7,9 @@ const Header = () => {
     <header className={s.header}>
       <div className={s.container}>
         <Link to="/" className={s.logo}>
-          TravelTrucks
-          {/* <svg>
-            <use href="../../images/icon.svg#icon-down"></use>
-          </svg> */}
+          <svg>
+            <use href="/icons/icons.svg#icon-TravelTrucks"></use>
+          </svg>
         </Link>
         <Navigation />
       </div>
