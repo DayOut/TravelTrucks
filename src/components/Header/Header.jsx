@@ -8,9 +8,9 @@ const Header = () => {
       <div className={s.container}>
         <Link to="/" className={s.logo}>
           TravelTrucks
-          <svg>
+          {/* <svg>
             <use href="../../images/icon.svg#icon-down"></use>
-          </svg>
+          </svg> */}
         </Link>
         <Navigation />
       </div>

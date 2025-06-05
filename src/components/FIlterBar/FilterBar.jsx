@@ -1,11 +1,25 @@
 import { useDispatch, useSelector } from "react-redux";
-import styles from "./FilterBar.module.css";
+import s from "./FilterBar.module.css";
 import {
   selectFilters,
   setAmenities,
   setLocation,
   setType,
 } from "../../redux/filters/filtersSlice";
+
+const amenitiesList = [
+  "AC",
+  "Automatic",
+  "Kitchen",
+  "TV",
+  "Bathroom",
+  "Petrol",
+  "Radio",
+  "Refrigerator",
+  "Microwave",
+  "Gas",
+  "Water",
+];
 
 const FilterBar = () => {
   const dispatch = useDispatch();
@@ -27,41 +41,65 @@ const FilterBar = () => {
   };
 
   return (
-    <div className={styles.filterBar}>
-      <input
-        type="text"
-        name="location"
-        placeholder="Enter location"
-        value={filters.location}
-        onChange={handleChange}
-        className={styles.input}
-      />
-      <select name="type" value={filters.type} onChange={handleChange}>
-        <option value="">All types</option>
-        <option value="campervan">Campervan</option>
-        <option value="caravan">Caravan</option>
-        <option value="motorhome">Motorhome</option>
-      </select>
-      <label>
+    <div className={s.filterBar}>
+      <div className={s.filterGroup}>
+        <label htmlFor="location" className={s.filterLabel}>
+          Location
+        </label>
         <input
-          type="checkbox"
-          name="amenities"
-          value="AC"
-          checked={filters.amenities.includes("AC")}
+          type="text"
+          name="location"
+          placeholder="Enter location"
+          value={filters.location}
           onChange={handleChange}
+          className={s.filterInput}
+          id="location"
         />
-        With AC
-      </label>
-      <label>
-        <input
-          type="checkbox"
-          name="amenities"
-          value="Bathroom"
-          checked={filters.amenities.includes("Bathroom")}
+      </div>
+
+      <div className={s.filterGroup}>
+        <label className={s.filterLabel}>Amenities</label>
+        <div className={s.amenitiesGroup}>
+          {amenitiesList.map((amenity) => (
+            <div
+              key={amenity}
+              className={`${s.checkboxWrap} ${
+                filters.amenities.includes(amenity) ? s.active : ""
+              }`}
+            >
+              <label htmlFor={amenity} className={s.amenityLabel}>
+                <input
+                  type="checkbox"
+                  name="amenities"
+                  value={amenity}
+                  checked={filters.amenities.includes(amenity)}
+                  onChange={handleChange}
+                  className={s.amenityCheckbox}
+                  id={amenity}
+                />
+                {amenity}
+              </label>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className={s.filterGroup}>
+        <label htmlFor="type" className={s.filterLabel}>
+          Type
+        </label>
+        <select
+          name="type"
+          value={filters.type}
           onChange={handleChange}
-        />
-        With Bathroom
-      </label>
+          className={s.filterSelect}
+        >
+          <option value="">All types</option>
+          <option value="campervan">Campervan</option>
+          <option value="caravan">Caravan</option>
+          <option value="motorhome">Motorhome</option>
+        </select>
+      </div>
     </div>
   );
 };
