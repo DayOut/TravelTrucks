@@ -1,6 +1,9 @@
 .navList {
   display: flex;
   gap: 32px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .link {
@@ -9,9 +12,20 @@
   line-height: 150%;
   text-align: center;
   color: #101828;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
 }
 
 .link:hover,
 .link:active {
   color: #d84343;
+}
+
+.activeLink {
+  color: #d84343;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: center;
+  text-decoration: none;
 }

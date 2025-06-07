@@ -4,3 +4,9 @@
   padding: 48px 64px 52px 64px;
   gap: 64px;
 }
+
+.listBtn {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}

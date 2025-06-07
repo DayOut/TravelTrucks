@@ -1,0 +1,148 @@
+.bookingForm {
+  border: 1px solid #dadde1;
+  border-radius: 10px;
+  padding: 44px 57px;
+  width: 641px;
+}
+.titleWrap {
+  margin-bottom: 24px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 120%;
+  color: #101828;
+  margin-bottom: 8px;
+}
+
+.text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #6c717b;
+}
+
+.input {
+  border-radius: 12px;
+  border: none;
+  padding: 18px 337px 18px 18px;
+  width: 527px;
+  height: 60px;
+  background-color: #f7f7f7;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #100;
+  margin-bottom: 14px;
+}
+
+.datePicker {
+  border-radius: 12px;
+  border: none;
+  padding: 18px 337px 18px 18px;
+  width: 527px;
+  height: 60px;
+  background-color: #f7f7f7;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #100;
+  margin-bottom: 14px;
+}
+
+.error {
+  color: #e44848;
+}
+
+.customDatePicker {
+  font-family: "Arial", sans-serif;
+  background-color: white;
+  border-radius: 12px;
+  border: 1px solid #475467;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+}
+
+.customDatePicker {
+  font-family: "Arial", sans-serif;
+  background-color: white;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+}
+
+.selectedDay {
+  background-color: #e44848;
+  color: white;
+}
+
+.selectedDay:hover,
+.selectedDay:active {
+  background-color: #e44848;
+}
+
+.day {
+  color: #101828;
+}
+
+.day:hover,
+.day:active {
+  background-color: #e44848;
+}
+
+.weekDay {
+  color: #6c717b;
+}
+
+.month {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.year {
+  font-size: 14px;
+  color: #6c717b;
+}
+
+.textarea {
+  border-radius: 10px;
+  border: none;
+  padding: 18px 308px 76px 18px;
+  width: 527px;
+  height: 118px;
+  background-color: #f7f7f7;
+  resize: none;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #6c717b;
+}
+
+.submitButton {
+  border-radius: 200px;
+  padding: 16px 60px;
+  width: 166px;
+  height: 56px;
+  background-color: #e44848;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  transition: background-color 0.3s ease;
+  display: flex;
+  margin: 0 auto;
+  margin-top: 24px;
+}
+
+.submitButton:hover,
+.submitButton:active {
+  background-color: #d84343;
+}
+
+.submitButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}

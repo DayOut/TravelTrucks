@@ -1,12 +1,33 @@
 import { configureStore } from "@reduxjs/toolkit";
-import campersReducer from "./campers/campersSlice.js";
-import filtersReducer from "./filters/filtersSlice.js";
-import favoritesReducer from "./favorites/favoritesSlice.js";
+import { persistStore, persistReducer } from "redux-persist";
+import storage from "redux-persist/lib/storage";
+import campersReducer from "./campers/campersSlice";
+import filtersReducer from "./filters/filtersSlice";
+import favoritesReducer from "./favorites/favoritesSlice";
+
+const favoritesPersistConfig = {
+  key: "favorites",
+  storage,
+  whitelist: ["favorites"],
+};
+
+const persistedFavoritesReducer = persistReducer(
+  favoritesPersistConfig,
+  favoritesReducer
+);
 
 export const store = configureStore({
   reducer: {
     campers: campersReducer,
     filters: filtersReducer,
-    favorites: favoritesReducer,
+    favorites: persistedFavoritesReducer,
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: ["persist/PERSIST"],
+      },
+    }),
 });
+
+export const persistor = persistStore(store);

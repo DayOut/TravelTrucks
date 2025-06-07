@@ -1,0 +1,59 @@
+.reviews {
+  width: 631px;
+}
+
+.review {
+  align-items: center;
+  gap: 12px;
+  border-radius: 8px;
+  margin-top: 24px;
+}
+
+.avatarRating {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.starIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.avatar {
+  border-radius: 60px;
+  width: 60px;
+  height: 60px;
+  background-color: #f2f4f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 133%;
+  color: #e44848;
+}
+
+.name {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: #101828;
+}
+
+.rating {
+  display: flex;
+  gap: 4px;
+  font-size: 14px;
+  color: #555;
+  margin: 4px 0;
+}
+
+.comment {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #475467;
+}

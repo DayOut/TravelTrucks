@@ -7,12 +7,18 @@ const Navigation = () => {
       <nav>
         <ul className={s.navList}>
           <li>
-            <NavLink className={s.link} to="/">
+            <NavLink
+              className={({ isActive }) => (isActive ? s.activeLink : s.link)}
+              to="/"
+            >
               Home
             </NavLink>
           </li>
           <li>
-            <NavLink className={s.link} to="/catalog">
+            <NavLink
+              className={({ isActive }) => (isActive ? s.activeLink : s.link)}
+              to="/catalog"
+            >
               Catalog
             </NavLink>
           </li>
@@ -21,4 +27,5 @@ const Navigation = () => {
     </div>
   );
 };
+
 export default Navigation;
